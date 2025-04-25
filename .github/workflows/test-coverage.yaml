@@ -26,6 +26,10 @@ jobs:
         with:
           extra-packages: any::covr, any::xml2, any::testthat
           needs: coverage
+          
+      - name: Install testthat manually
+        run: |
+          Rscript -e 'install.packages("testthat", repos = "https://cloud.r-project.org")'
 
       - name: Test coverage
         run: |
